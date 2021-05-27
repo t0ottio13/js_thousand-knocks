@@ -211,9 +211,77 @@ function getNthChar(s, n) {
 
 // 文字列の一致
 function isEqual(s, t) {
-
+    if ( s == t ){
+        console.log("yes");
+        return "yes";
+    } else {
+        console.log("no");
+        return "no";
+    }
 }
 
-console.log(isEqual('gsacademy', 'gsacademy'));    // Yes
-console.log(isEqual('JavaScript', 'ジャバスク'));    // No
-console.log(isEqual('aaaaa', 'aaaaaa'));    // No
+// console.log(isEqual('gsacademy', 'gsacademy'));    // Yes
+// console.log(isEqual('JavaScript', 'ジャバスク'));    // No
+// console.log(isEqual('aaaaa', 'aaaaaa'));    // No
+
+// Aの個数
+function getNumberOfA(s) {
+    const array = s.split('');
+    let count = 0;
+    for (let i = 0; i < array.length; i++){
+        if (array[i] == "A") {
+            count++;
+        }
+    }
+    return count;
+}
+
+// console.log(getNumberOfA('GSACADEMY'));    // 2
+// console.log(getNumberOfA('aAaAaA'));    // 3
+// console.log(getNumberOfA('JavaScript'));    // 0
+
+
+// 表面積の計算
+function getSurfaceArea(a) {
+    return a * a * 6;
+}
+
+// console.log(getSurfaceArea(4));    // 96
+// console.log(getSurfaceArea(1));    // 6
+
+
+// 三角形の内角の和
+function getAngle(a, b) {
+    return 180 - (a + b);
+}
+
+// console.log(getAngle(30, 90));    // 60
+// console.log(getAngle(45, 45));    // 90
+
+// 数字の出力
+function zeroPadding3(n) {
+    if (n.length == 2) {
+        return ('00' + n).slice(-2);
+    } else {
+        return ('000' + n).slice(-3);
+    }
+}
+
+// console.log(zeroPadding3(98));    // 098
+// console.log(zeroPadding3(2));    // 002
+
+// 一週間の予定
+function getPaidHolidays(s) {
+    const array = s.split(' ');
+    let count = 0;
+    for (let i = 0; i < array.length; i++){
+        if (array[i] == "no") {
+            count++;
+        }
+    }
+    return count;
+}
+
+// console.log(getPaidHolidays('yes yes yes yes no no yes'));    // 2
+// console.log(getPaidHolidays('yes no no no no no yes'));    // 5
+
