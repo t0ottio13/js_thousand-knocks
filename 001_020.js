@@ -16,8 +16,7 @@ function compareNumbers(a,b) {
 
 // 単位の計算
 function convertToMm(n, s) {
-    const obj = { km: 1000000, m: 1000, cm: 10 }
-    return n * obj[s];
+    return n * { km: 1000000, m: 1000, cm: 10 }[s];
 }
 
 // console.log(convertToMm(1, 'km'));    // 1000000

@@ -42,6 +42,7 @@ function getTimeUntilFull(n) {
 // 頭文字
 function getInitialFromName(s) {
     return ([s.split(' ')[0].split('')[0], s.split(' ')[1].split('')[0]].join('.'));
+    // １文にまとめたら、可読性ひどいw
 }
 
 // console.log(getInitialFromName('Dio Brando'));    // D.B
