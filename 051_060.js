@@ -54,24 +54,57 @@ function combineArray(a, b) {
 // console.log(combineArray(gen, yui));    // ["米", "トイレットペーパー", "ちゅーる", "酒", "洗剤", "肉", "ブロッコリー"]
 
 
-// // 成績を晒す
-// function createBadScoreArray(a) {
-//     let array = a.split(' ');
-//     array.sort(function(first, second){
-//     if (first > second){
-//         return 1;
-//     }else if (first < second){
-//         return -1;
-//     }else{
-//         return 0;
-//     }
-//     });
-//     console.log(array);
-// }
+// 成績を晒す
+function createBadScoreArray(a) {
+    const i = a.split(' ');
+    const b = [];
+    console.log(i.sort(compareFunc));
+    for (let a= 0; a < i.length; a++) {
+        b.push(parseInt(i[a]));
+    }
+    return b.join(' ')
+}
+function compareFunc(a, b) {
+    return a - b;
+}
 
-// 配列名.sort()
-// 配列名.sort( コールバック関数(一つ目の要素, 二つ目の要素) )
 
 // console.log(createBadScoreArray('15 8 9 100 26 1'));    // 1 8 9 15 26 100
 
 // console.log(createBadScoreArray('50 15 89 5 61 2 44'));    // 2 5 15 44 50 61 89
+
+
+// 特定の文字列を含むか
+function containStrings(str1, str2) {
+    if (str1.indexOf(str2) == -1) {
+        return "false";
+    }
+    return "true"
+}
+
+// const a = "あけましておめでとうございます";
+// const b = "おめでとう";
+
+// console.log(containStrings(a, b));    // true
+
+// const c = "Love the life you live. Live the life you love.";
+// const d = "best";
+
+// console.log(containStrings(c, d));    // false
+
+
+// アンケートデータの作成
+function createObject(a, b) {
+    return { name: a, age: b,};
+}
+
+// console.log(createObject('ichiro', 20));    // { name: "ichiro", age: 20, }
+// console.log(createObject('momoko', 22));    // { name: "momoko", age: 22, }
+
+// ランダムに挨拶
+function randomGreet(a, b, c) {
+    return [a, b, c][Math.floor(Math.random() * (3 - 0))];
+}
+// console.log(randomGreet('おはよう','こんにちは','こんばんは'));   // おはようorこんにちはorこんばんは
+// console.log(randomGreet('Hi!','Hello!','Bye!'));   // Hi! or Hello! or Bye!
+
