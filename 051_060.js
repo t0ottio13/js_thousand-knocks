@@ -108,3 +108,211 @@ function randomGreet(a, b, c) {
 // console.log(randomGreet('おはよう','こんにちは','こんばんは'));   // おはようorこんにちはorこんばんは
 // console.log(randomGreet('Hi!','Hello!','Bye!'));   // Hi! or Hello! or Bye!
 
+// オブジェクトの並び替え
+
+function sortObject(obj) {
+    obj.sort((a, b) => {
+        if (a.id < b.id) {
+            return -1;
+        } else {
+            return 1;
+        }
+    });
+    return obj;
+}
+
+// const objectArray1 = [
+//     {
+//         id: 8,
+//         name: "Emily",
+//         age: 29,
+//     },
+//     {
+//         id: 1,
+//         name: "John",
+//         age: 22,
+//     },
+//     {
+//         id: 4,
+//         name: "Bob",
+//         age: 30,
+//     },
+// ];
+
+// console.log(sortObject(objectArray1));   // 1:John(22),4:Bob(30),8:Emily(29)
+
+// const objectArray2 = [
+//     {
+//         id: 10,
+//         name: "taro",
+//         age: 29,
+//     },
+//     {
+//         id: 112,
+//         name: "hanako",
+//         age: 22,
+//     },
+//     {
+//         id: 40,
+//         name: "pochi",
+//         age: 3,
+//     },
+// ];
+
+// console.log(sortObject(objectArray2));    // 10:taro(29),40:pochi(3),112:hanako(22)
+
+
+// 名前しかいらん
+function createNameArray(array) {
+    const ans = [];
+    for (let i = 0; i < array.length; i++) {
+        ans.push(array[i].name);
+    }
+    return ans;
+}
+
+// const objectArray3 = [
+//     {
+//         id: 8,
+//         name: "Emily",
+//         age: 29,
+//     },
+//     {
+//         id: 1,
+//         name: "John",
+//         age: 22,
+//     },
+//     {
+//         id: 4,
+//         name: "Bob",
+//         age: 30,
+//     },
+// ];
+
+// console.log(createNameArray(objectArray3));   // ["John", "Emily", "Bob"]
+
+// const objectArray4 = [
+//     {
+//         id: 10,
+//         name: "taro",
+//         age: 29,
+//     },
+//     {
+//         id: 112,
+//         name: "hanako",
+//         age: 22,
+//     },
+//     {
+//         id: 40,
+//         name: "pochi",
+//         age: 3,
+//     },
+// ];
+// console.log(createNameArray(objectArray4));   // ["pochi", "hanako", "taro"]
+
+// メール一斉送信
+function filterUnder25Array(array) {
+    const ans = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].age < 25) {
+            ans.push(array[i].id);
+        }
+    }
+    return ans;
+}
+
+// const objectArray5 = [
+//     {
+//         id: 8,
+//         name: "Emily",
+//         age: 29,
+//     },
+//     {
+//         id: 1,
+//         name: "John",
+//         age: 22,
+//     },
+//     {
+//         id: 4,
+//         name: "Bob",
+//         age: 30,
+//     },
+//     ];
+
+//     console.log(filterUnder25Array(objectArray5));   // [1]
+
+//     const objectArray6 = [
+//     {
+//         id: 10,
+//         name: "taro",
+//         age: 29,
+//     },
+//     {
+//         id: 112,
+//         name: "hanako",
+//         age: 22,
+//     },
+//     {
+//         id: 40,
+//         name: "pochi",
+//         age: 3,
+//     },
+// ];
+
+// console.log(filterUnder25Array(objectArray6));   // [112, 40]
+
+
+// 予算オーバー
+
+function canTakeThis(arr) {
+    let sum_cart = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum_cart += (arr[i].price * arr[i].count);
+    }
+    return (sum_cart < 114514) ? true : false;
+}
+// const tarosCart = [
+//     {
+//         id: 8,
+//         name: "Yoich",
+//         price: 5800,
+//         count: 2,
+//     },
+//     {
+//         id: 1,
+//         name: "Yamasaki30",
+//         price: 3000000,
+//         count: 1,
+//     },
+//     {
+//         id: 4,
+//         name: "Chita",
+//         price: 3600,
+//         count: 1,
+//     },
+// ];
+
+// console.log(canTakeThis(tarosCart));    // false
+
+// const hanakosCart = [
+//     {
+//         id: 10,
+//         name: "ひまわり",
+//         price: 280,
+//         count: 3,
+//     },
+//     {
+//         id: 112,
+//         name: "かすみ草",
+//         price: 220,
+//         count: 2,
+//     },
+//     {
+//         id: 40,
+//         name: "ガーベラ",
+//         price: 110,
+//         count: 5,
+//     },
+// ];
+// console.log(canTakeThis(hanakosCart));    // true
+
