@@ -115,8 +115,8 @@ function calculatePoint(s) {
     return point;
 }
 
-console.log(calculatePoint('apple aple,orange olange,grape glepe,lemon lemon'));    // 3
-console.log(calculatePoint('january januarry,february febrary,march march,april aplil,may may,june june,july jury,august ougust,september septenber,october october,november novembar,december dicembar'));    // 13
+// console.log(calculatePoint('apple aple,orange olange,grape glepe,lemon lemon'));    // 3
+// console.log(calculatePoint('january januarry,february febrary,march march,april aplil,may may,june june,july jury,august ougust,september septenber,october october,november novembar,december dicembar'));    // 13
 
 
 

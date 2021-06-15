@@ -4,11 +4,7 @@ function getNumberOfDango(s) {
     let count = 0;
     array.forEach(e => {
         let i = parseInt(e);
-        if (i > 5) {
-            count += 5;
-        } else {
-            count += i;
-        }
+        (i > 5) ? count += 5 : count += i;
     })
     return count;
 }
