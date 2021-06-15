@@ -63,7 +63,7 @@ function isPerfectNumber(s) {
     S.forEach(e => {
         parseS.push(parseInt(e));
     });
-    // ここで問題の数字だけの配列ができた parseS
+    // ↑ここで問題の数字だけの配列ができた parseS
     const chaser = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                     11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
                     21,22,23,24,25,26,27,28,29,30];
@@ -91,5 +91,32 @@ function isPerfectNumber(s) {
 // console.log(isPerfectNumber('28 28'));    // perfect nearly neither
 // console.log(isPerfectNumber('28 16 777'));    // perfect nearly neither
 // console.log(isPerfectNumber('3 4 5 6'));    // neither nearly neither perfect
+
+
+
+// 単語のテスト採点
+function calculatePoint(s) {
+    S = s.split(",");
+    let point = 0;
+    for (let i = 0; i < S.length; i++) {
+        let count = 0;
+        for (let e = 0; e < S[i].length; e++) {
+            if (S[i].split(" ")[0].split("")[e] == S[i].split(" ")[1].split("")[e]) {
+            } else {
+                count++;
+            }
+        }
+        if (count == 0) {
+            point = point +2
+        } else if (count == 1) {
+            point++;
+        } else {}
+        }
+    return point;
+}
+
+console.log(calculatePoint('apple aple,orange olange,grape glepe,lemon lemon'));    // 3
+console.log(calculatePoint('january januarry,february febrary,march march,april aplil,may may,june june,july jury,august ougust,september septenber,october october,november novembar,december dicembar'));    // 13
+
 
 
