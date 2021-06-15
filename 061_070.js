@@ -119,4 +119,12 @@ function calculatePoint(s) {
 // console.log(calculatePoint('january januarry,february febrary,march march,april aplil,may may,june june,july jury,august ougust,september septenber,october october,november novembar,december dicembar'));    // 13
 
 
+// console.log("10" > 5); //true
+// console.log( 10 > "5"); //true
+// console.log("10" > "5"); //false
+
+// console.log("5" + 5 > 11) //true
+// console.log("5" + 5 > "11") //true
+// console.log(5 + 5 > "11") //false
+// console.log("5" + 5)//55
 
