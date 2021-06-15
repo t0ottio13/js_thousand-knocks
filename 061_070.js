@@ -56,36 +56,40 @@ function convertLeet(s) {
 
 // 完全数とほぼ完全数
 
-// function isPerfectNumber(s) {
-//     const s2 = s.split(' ');
-//     let S = 0;
-//     for (let i = 0; i < s2.length; i++) {
-//         let N = parseInt(s2[i]);
-//         while (N % 2 == 0) {
-//             S = S + (N / 2);
-//             if((N%2)%2==0){N=N/2}
-//             // console.log("N:" + N);
-//             // console.log("S:"+S);
-//         }
-//         while (N % 3 == 0) {
-//             S = S + (N / 3);
-//             if((N%3)%3==0){N=N/3}
-//         }
-//         while (N % 5 == 0) {
-//             S = S + (N / 5);
-//             if((N%5)%5==0){N=N/5}
-//         }
-//         while (N % 7 == 0) {
-//             S = S + (N / 7);
-//             if((N%7)%7==0){N=N/7}
-//         }
-//         console.log("N:" + N);
-//             console.log("S:"+S);
-//     }
-// }
+function isPerfectNumber(s) {
+    const ans = [];
+    const S = s.split(" ");
+    let parseS = [];
+    S.forEach(e => {
+        parseS.push(parseInt(e));
+    });
+    // ここで問題の数字だけの配列ができた parseS
+    const chaser = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                    11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+                    21,22,23,24,25,26,27,28,29,30];
+    parseS.forEach(i => {
+        let count = 0;
+        chaser.forEach(e => {
+            if (i % e == 0) {
+                if (i != e) {
+                    count = count + e;
+                }
+            }
+        })
+        if (count == i) {
+            ans.push("perfect");
+        } else if (count == i - 1 || count == i +1){
+            ans.push("nearly");
+        } else {
+            ans.push("neither");
+        }
+    });
+    return ans;
+}
 
+// ちょっと強引だけど草
+// console.log(isPerfectNumber('28 28'));    // perfect nearly neither
 // console.log(isPerfectNumber('28 16 777'));    // perfect nearly neither
-console.log(isPerfectNumber('28'));    // perfect nearly neither
 // console.log(isPerfectNumber('3 4 5 6'));    // neither nearly neither perfect
 
 
