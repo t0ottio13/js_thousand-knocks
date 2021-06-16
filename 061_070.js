@@ -128,3 +128,91 @@ function calculatePoint(s) {
 // console.log(5 + 5 > "11") //false
 // console.log("5" + 5)//55
 
+// 先生の宿題
+function getAnswer(s) {
+    console.log(s.split(" "));
+    // s.split(" ").indexOf("-");
+    let result = [];
+    S = s.split(" ");
+    for (let i = 0; i < S.length; i++) {
+        if (parseInt(S[i])) result.push(+S[i]);
+    }
+    if (S.indexOf("x") > S.indexOf("=")){
+        if (S.indexOf("+")!= -1) {
+            return result[0] + result[1];
+        } else if (S.indexOf("-")!= -1){
+            return result[0] - result[1];
+        }
+    } else {
+        if (S.indexOf("x") != 0) {
+            if (S.indexOf("+")!= -1) {
+                return result[0] + result[1];
+            } else if (S.indexOf("-")!= -1){
+                return result[0] - result[1];
+            }
+        } else {
+            if (S.indexOf("+")!= -1) {
+                return (result[0] - result[1])*-1;
+            } else if (S.indexOf("-")!= -1){
+                return (result[0] + result[1]);
+            }
+        }
+    }
+}
+
+// console.log(getAnswer('1 + 3 = x'));    // 4
+// console.log(getAnswer('6 - x = 3'));    // 3
+// console.log(getAnswer('x - 1 = 5'));    // 6
+// console.log(getAnswer('x + 1 = 5'));    // 4]
+
+
+
+// console.log(parseInt(abe));
+// console.log(+abe);
+// console.log(abe);
+
+// だめだったやつ
+// const abe = "abesnn";
+// console.log(abe.length);
+// function hoge () {
+//     return abe == "abesan" ? abe.length==6 ? "abe1" : "abe2" : "abe3";
+// }
+// 条件１：abe > 4
+// 条件２：abe < 3
+
+// 条件１と条件２ 両方満たすと abe
+// 条件１と条件２ どちらか満たすと abe2
+// 条件１と条件２ どちらも満たさない abe3
+
+// console.log(hoge());
+
+
+// ショートハンド if else if
+// 'use strict';
+// {
+//   const abe = 5;
+//   function hoge() {
+//     return abe == 5 ? '5です' : abe == 4 ? '4です' :'それ意外';
+//   }
+//   console.log(hoge());
+// }
+// if文の結果にif文を入れている。
+
+
+
+// アニメの時間
+function formatHour(s) {
+    S = s.split(" ");
+    let before_hour = S[1].split(":")[0];
+    let before_day = S[0].split("/")[1]
+    let add_day = Math.floor(before_hour / 24);
+    let after_day = (+before_day + (+add_day));
+    let after_hour = (+before_hour - (24 * (+add_day)));
+    return [[S[0].split("/")[0], after_day].join("/"),
+    ([('0' + after_hour).split(-2), S[1].split(":")[1]].join(":"))].join(" ");
+}
+
+// console.log(formatHour('01/27 24:30'));    // 01/28 00:30
+// console.log(formatHour('02/31 73:59'));    // 02/34 01:59
+// console.log(formatHour('12/31 00:00'));    // 12/31 00:00
+// console.log(formatHour('12/31 25:01'));    // 12/32 01:01
