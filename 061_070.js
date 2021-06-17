@@ -216,3 +216,26 @@ function formatHour(s) {
 // console.log(formatHour('02/31 73:59'));    // 02/34 01:59
 // console.log(formatHour('12/31 00:00'));    // 12/31 00:00
 // console.log(formatHour('12/31 25:01'));    // 12/32 01:01
+
+
+// console.log(["チョキ", "ぐー", "パー"][~~(Math.random() * 3)]);
+
+// コーヒー割引キャンペーン
+
+function getCostForFreeCoffee(s) {
+    S = s.split(" ");
+    let total = +S[0];
+    let discount = (~~(total * (S[1]) / 100));
+    while (S[0] > discount) {
+        console.log(discount);
+        total = total + (S[0] - discount);
+        discount = discount + (~~(S[0] - discount * (S[1]) / 100));
+        console.log(~~(S[0] - discount * (S[1]) / 100));
+        console.log(discount);
+    };
+    // 途中
+    return total;
+}
+
+console.log(getCostForFreeCoffee('300 50'));    // 596
+// console.log(getCostForFreeCoffee('1000 99'));    // 1010
